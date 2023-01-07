@@ -1,4 +1,4 @@
-
+game_status = "";
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -48,7 +48,7 @@ function ModelLoaded()
 }
 
 function draw(){
-  if(wristX > 0.2 && wristY>0.2)
+  if(game_status == "start")
   {
   fill("#FF0000");
   stroke("#F0000");
@@ -62,7 +62,7 @@ function draw(){
  fill("black");
  stroke("black");
  rect(0,0,20,700);
- 
+
    //funtion paddleInCanvas call 
    paddleInCanvas();
  
@@ -92,7 +92,10 @@ function draw(){
     move();
    
 }
-
+function startgame(){
+  game_status = "start"
+  document.getElementById("status").innerHTML = "game is loaded"
+ }
 
 
 //function reset when ball does notcame in the contact of padde
